@@ -104,7 +104,143 @@ d.	Настройте каналы виртуального соединения
 &nbsp;&nbsp;&nbsp;&nbsp;- Для чего нужна команда login?     
 &nbsp;&nbsp;&nbsp;&nbsp; Она включает проверку пароля для доступа к этой линии. Без этой команды коммутатор не будет требовать пароль, даже если он задан командой **password**.  
 
+### **Шаг 2. Настройка IP-адреса на компьютере PC-A.**    
+![alt text](image-21.png)      
 
+### **Часть 3. Проверка сетевых подключений**  
+#### **Шаг 1. Отображение конфигурации коммутатора**    
+а. Конфигурация приведена ниже.   
+  S1#show run      
+Building configuration...      
 
+Current configuration : 1294 bytes    
+!    
+version 15.0      
+no service timestamps log datetime msec      
+no service timestamps debug datetime msec       
+service password-encryption     
+!      
+hostname S1     
+!      
+enable secret 5     $1$mERr$9cTjUIEqNGurQiFU.ZeCi1     
+!      
+!      
+!     
+no ip domain-lookup      
+!        
+!       
+!        
+spanning-tree mode pvst      
+spanning-tree extend system-id     
+!     
+interface FastEthernet0/1      
+!     
+interface FastEthernet0/2      
+!      
+interface FastEthernet0/3      
+!      
+interface FastEthernet0/4      
+!      
+interface FastEthernet0/5      
+!      
+interface FastEthernet0/6      
+!       
+interface FastEthernet0/7       
+!        
+interface FastEthernet0/8       
+!         
+interface FastEthernet0/9       
+!        
+interface FastEthernet0/10       
+!       
+interface FastEthernet0/11      
+!       
+interface FastEthernet0/12      
+!       
+interface FastEthernet0/13     
+!       
+interface FastEthernet0/14      
+!      
+interface FastEthernet0/15       
+!      
+interface FastEthernet0/16       
+!       
+interface FastEthernet0/17      
+!      
+interface FastEthernet0/18     
+!      
+interface FastEthernet0/19      
+!      
+interface FastEthernet0/20      
+!      
+interface FastEthernet0/21      
+!      
+interface FastEthernet0/22      
+!       
+interface FastEthernet0/23     
+!       
+interface FastEthernet0/24      
+!      
+interface GigabitEthernet0/1      
+!      
+interface GigabitEthernet0/2      
+!       
+interface Vlan1       
+ ip address 192.168.1.2 255.255.255.0           
+!        
+banner motd ^CUnauthorized access is strictly prohibited.^C        
+!       
+!      
+!      
+line con 0      
+ password 7 0822455D0A16     
+ login      
+!       
+line vty 0 4       
+ password 7 0822455D0A16       
+ login      
+ transport input telnet      
+line vty 5 15     
+ login      
+!      
+!       
+!      
+!      
+end      
 
+b. Проверить параметры VLAN 1.    
+![alt text](image-22.png)      
+
+&nbsp;&nbsp;&nbsp;&nbsp;-Какова полоса пропускания этого интерфейса?   
+&nbsp;&nbsp;&nbsp;&nbsp; 100000 Кбит/с   
+
+#### **Шаг 2. Протестируйте сквозное соединение, отправив эхо-запрос**     
+a. В командной строке компьютера PC-A с помощью утилиты ping проверьте связь сначала с адресом PC-A.    
+![alt text](image-23.png)        
+
+b. Из командной строки компьютера PC-A отправьте эхо-запрос на административный адрес интерфейса SVI коммутатора S1.      
+![alt text](image-24.png)       
+
+#### **Шаг 3. Проверьте удаленное управление коммутатором S1.**    
+a.Откройте Tera Term или другую программу для эмуляции терминала с поддержкой Telnet.     
+![alt text](image-29.png)         
+
+b.	Выберите сервер Telnet и укажите адрес управления SVI для подключения к S1.  Пароль: **cisco**    
+![alt text](image-28.png)       
+
+c.	После ввода пароля **cisco** вы окажетесь в командной строке пользовательского режима. Для перехода в исполнительский режим EXEC введите команду **enable** и используйте секретный пароль **class**.      
+![alt text](image-30.png)     
+
+d.	Сохраните конфигурацию.    
+![alt text](image-31.png)       
+
+e.	Чтобы завершить сеанс Telnet, введите exit.       
+![alt text](image-32.png)      
+
+## 	**Вопросы для повторения**      
+1.	Зачем необходимо настраивать пароль VTY для коммутатора?       
+Настройка пароля VTY для коммутатора Cisco необходима для ограничения доступа к устройству по протоколу Telnet.        
+
+2.	Что нужно сделать, чтобы пароли не отправлялись в незашифрованном виде?   
+Чтобы пароли в устройствах Cisco не отправлялись в незашифрованном виде, нужно активировать функцию шифрования паролей 
 
