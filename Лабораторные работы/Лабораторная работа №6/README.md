@@ -86,7 +86,14 @@
 ![alt text](image-24.png)    
 ![alt text](image-25.png)     
 
+### **Шаг 4. Настройте узлы ПК.**      
+#### **Настройка PC-A**    
+![alt text](image-26.png)     
 
+#### **Настройка PC-B**   
+ ![alt text](image-27.png)     
+
+ 
 
 
 
