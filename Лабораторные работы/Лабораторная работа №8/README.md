@@ -211,6 +211,8 @@
 #### Пингуем из командной строки PC-B     
 ![alt text](image-68.png)     
 
+[Скачать конфиг лабораторной работы №8](https://github.com/nikolaishlyahtin1987-creator/NETWORK-ENGINEER_2026/blob/main/Лабораторные%20работы/Лабораторная%20работа%20№8/LAB%20№8_config.pkt "Нажмите для скачивания файла конфигурации")     
+
 
 
 
