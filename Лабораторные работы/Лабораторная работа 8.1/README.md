@@ -163,8 +163,59 @@
 
 ![alt text](image-39.png)   
 
+### **Шаг 6.Настройте базовые параметры каждого коммутатора.**      
+#### &nbsp;&nbsp;&nbsp;&nbsp;a.	Присвойте коммутатору имя устройства.      
+![alt text](image-40.png)    
+
+![alt text](image-41.png)      
+
+#### &nbsp;&nbsp;&nbsp;&nbsp;b.	Отключите поиск DNS, чтобы предотвратить попытки маршрутизатора неверно преобразовывать введенные команды таким образом, как будто они являются именами узлов.      
+![alt text](image-42.png)    
+
+![alt text](image-43.png)    
+
+#### &nbsp;&nbsp;&nbsp;&nbsp;c.	Назначьте **class** в качестве зашифрованного пароля привилегированного режима EXEC.      
+![alt text](image-44.png)    
+
+![alt text](image-45.png)    
+
+#### &nbsp;&nbsp;&nbsp;&nbsp;d.	Назначьте **cisco** в качестве пароля консоли и включите вход в систему по паролю.       
+![alt text](image-46.png)     
+
+![alt text](image-47.png)     
+
+#### &nbsp;&nbsp;&nbsp;&nbsp;e.	Назначьте **cisco** в качестве пароля VTY и включите вход в систему по паролю.      
+![alt text](image-48.png)     
+
+![alt text](image-49.png)    
+
+#### &nbsp;&nbsp;&nbsp;&nbsp;f.	Зашифруйте открытые пароли.    
+![alt text](image-50.png)     
+
+![alt text](image-51.png)     
+
+#### &nbsp;&nbsp;&nbsp;&nbsp;g.	Создайте баннер с предупреждением о запрете несанкционированного доступа к устройству.       
+![alt text](image-52.png)     
+
+![alt text](image-53.png)     
+
+#### &nbsp;&nbsp;&nbsp;&nbsp;h.	Сохраните текущую конфигурацию в файл загрузочной конфигурации.      
+![alt text](image-54.png)    
+
+![alt text](image-55.png)    
+
+#### &nbsp;&nbsp;&nbsp;&nbsp;i.	Установите часы на маршрутизаторе на сегодняшнее время и дату.       
+![alt text](image-56.png)    
+
+![alt text](image-57.png)     
+
+#### &nbsp;&nbsp;&nbsp;&nbsp;j.	Скопируйте текущую конфигурацию в файл загрузочной конфигурации.       
+![alt text](image-58.png)     
+
+![alt text](image-59.png)      
 
 
+  
 
 
 
