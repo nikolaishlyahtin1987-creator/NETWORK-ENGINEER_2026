@@ -299,6 +299,30 @@
 ### **Шаг 2. Сохраните конфигурацию.**     
 ![alt text](image-81.png)      
 
+### **Шаг 3. Проверка конфигурации сервера DHCPv4**    
+#### &nbsp;&nbsp;&nbsp;&nbsp;a.	Чтобы просмотреть сведения о пуле, выполните команду **show ip dhcp pool**.       
+![alt text](image-82.png)      
+
+#### &nbsp;&nbsp;&nbsp;&nbsp;b.	Выполните команду show ip dhcp bindings для проверки установленных назначений адресов DHCP.       
+![alt text](image-83.png)       
+
+#### &nbsp;&nbsp;&nbsp;&nbsp;c.	Выполните команду show ip dhcp server statistics для проверки сообщений DHCP.      
+![alt text](image-84.png)    
+
+#### В Packet Tracer данная коанда не работает     
+
+### **Шаг 4. Попытка получить IP-адрес от DHCP на PC-A**    
+#### &nbsp;&nbsp;&nbsp;&nbsp;a.	Из командной строки компьютера PC-A выполните команду ipconfig /all.     
+![alt text](image-85.png)     
+
+#### &nbsp;&nbsp;&nbsp;&nbsp;b.	После завершения процесса обновления выполните команду ipconfig для просмотра новой информации об IP-адресе.      
+![alt text](image-86.png)     
+
+#### &nbsp;&nbsp;&nbsp;&nbsp;c.	Проверьте подключение с помощью пинга IP-адреса интерфейса R0 G0/0/1.       
+#### В задании, опечатка: вместо R0 G0/0/1 возможно имеется в виду интерфейс R1 G0/0/1.100, который является шлюзом по умолчанию для PC-A.   
+
+![alt text](image-87.png)     
+
 
 
   
