@@ -323,6 +323,34 @@
 
 ![alt text](image-87.png)     
 
+## **Часть 3. Настройка и проверка DHCP-ретрансляции на R2**     
+### **Шаг 1. Настройка R2 в качестве агента DHCP-ретрансляции для локальной сети на G0/0/1**     
+#### &nbsp;&nbsp;&nbsp;&nbsp;a.	Настройте команду **ip helper-address** на G0/0/1, указав IP-адрес G0/0/0 R1.        
+![alt text](image-88.png)        
+
+#### &nbsp;&nbsp;&nbsp;&nbsp;b.	Сохраните конфигурацию.      
+![alt text](image-89.png)     
+
+### **Шаг 2. Попытка получить IP-адрес от DHCP на PC-B**      
+#### &nbsp;&nbsp;&nbsp;&nbsp;a.	Из командной строки компьютера PC-B выполните команду **ipconfig /all**.       
+![alt text](image-90.png)     
+
+#### &nbsp;&nbsp;&nbsp;&nbsp;b.	После завершения процесса обновления выполните команду ipconfig для просмотра новой информации об IP-адресе.       
+![alt text](image-91.png)     
+
+#### &nbsp;&nbsp;&nbsp;&nbsp;c.	Проверьте подключение с помощью пинга IP-адреса интерфейса R1 G0/0/1.      
+![alt text](image-92.png)      
+
+#### &nbsp;&nbsp;&nbsp;&nbsp;d.	Выполните show ip dhcp binding для R1 для проверки назначений адресов в DHCP.       
+![alt text](image-93.png)       
+
+#### e.	Выполните команду show ip dhcp server statistics для проверки сообщений DHCP.      
+![alt text](image-94.png)     
+
+#### В Packet tracer эта команда не работает. Поэтому пункт e пропускаем.    
+
+
+
 
 
   
