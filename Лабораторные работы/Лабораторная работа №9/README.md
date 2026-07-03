@@ -91,7 +91,79 @@
 
  ![alt text](image-26.png)     
 
- 
+#### &nbsp;&nbsp;&nbsp;&nbsp;b.	Убедитесь, что режим транкинга успешно настроен на всех коммутаторах.        
+![alt text](image-27.png)      
+
+![alt text](image-28.png)        
+
+#### &nbsp;&nbsp;&nbsp;&nbsp;c.	Отключить согласование DTP F0/1 на S1 и S2.      
+![alt text](image-29.png)      
+
+![alt text](image-30.png)     
+
+#### &nbsp;&nbsp;&nbsp;&nbsp;d.	Проверьте с помощью команды show interfaces      
+![alt text](image-31.png)    
+
+![alt text](image-32.png)     
+
+### **Шаг 2. Настройка портов доступа**     
+#### &nbsp;&nbsp;&nbsp;&nbsp;a.	На S1 настройте F0/5 и F0/6 в качестве портов доступа и свяжите их с VLAN 10.      
+![alt text](image-33.png)      
+
+#### &nbsp;&nbsp;&nbsp;&nbsp;b.	На S2 настройте порт доступа Fa0/18 и свяжите его с VLAN 10.      
+![alt text](image-34.png)     
+
+### &nbsp;&nbsp;&nbsp;&nbsp;**Шаг 3. Безопасность неиспользуемых портов коммутатора**     
+#### a.	На S1 и S2 переместите неиспользуемые порты из VLAN 1 в VLAN 999 и отключите неиспользуемые порты.        
+#### Используемые порты на S1: Fa0/1 (транк), Fa0/5 (R1), Fa0/6 (PC‑A).     
+#### Все остальные порты переводим в VLAN 999 и отключаем.     
+ ![alt text](image-35.png)    
+
+#### Используемые порты на S2: Fa0/1 (транк), Fa0/18 (PC‑B).      
+#### Все остальные порты переводим в VLAN 999 и отключаем.     
+![alt text](image-36.png)        
+
+#### &nbsp;&nbsp;&nbsp;&nbsp;b.	Убедитесь, что неиспользуемые порты отключены и связаны с VLAN 999, введя команду  show.        
+![alt text](image-37.png)      
+
+![alt text](image-38.png)       
+
+### **Шаг 4. Документирование и реализация функций безопасности порта.**      
+#### &nbsp;&nbsp;&nbsp;&nbsp;a.	На S1, введите команду show port-security interface f0/6  для отображения настроек по умолчанию безопасности порта для интерфейса F0/6. Запишите свои ответы ниже.         
+![alt text](image-39.png)      
+
+![alt text](image-40.png)      
+
+#### &nbsp;&nbsp;&nbsp;&nbsp;b.	На S1 включите защиту порта на F0 / 6 со следующими настройками:
+#### - Максимальное количество записей MAC-адресов: 3
+#### - Режим безопасности: restrict
+#### - Aging time: 60 мин.
+#### - Aging type: неактивный
+![alt text](image-41.png)      
+
+#### В Packet Tracer команда **switchport port-security aging type inactivity** не работает, оставляем без изменений.    
+
+#### c.	Verify port security on S1 F0/6.     
+![alt text](image-42.png)    
+
+![alt text](image-43.png)      
+
+#### &nbsp;&nbsp;&nbsp;&nbsp;d.	Включите безопасность порта для F0 / 18 на S2. Настройте каждый активный порт доступа таким образом, чтобы он автоматически добавлял адреса МАС, изученные на этом порту, в текущую конфигурацию.      
+![alt text](image-44.png)      
+
+#### &nbsp;&nbsp;&nbsp;&nbsp;e.	Настройте следующие параметры безопасности порта на S2 F / 18:
+#### - Максимальное количество записей MAC-адресов: 2
+#### - Тип безопасности: Protect
+#### - Aging time: 60 мин.       
+![   ](image-45.png)      
+
+#### &nbsp;&nbsp;&nbsp;&nbsp;f.	Проверка функции безопасности портов на S2 F0/18.         
+![alt text](image-46.png)     
+
+![alt text](image-47.png)      
+
+
+
 
 
 
