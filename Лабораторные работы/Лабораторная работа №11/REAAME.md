@@ -56,7 +56,50 @@
 #### &nbsp;&nbsp;&nbsp;&nbsp;h.	Сохраните текущую конфигурацию в файл загрузочной конфигурации.    
 ![alt text](image-18.png)    
 
-![alt text](image-19.png)     
+![alt text](image-19.png)    
+
+### **Шаг 3. Настройте базовые параметры каждого коммутатора.**      
+#### &nbsp;&nbsp;&nbsp;&nbsp;a.	Присвойте коммутатору имя устройства.     
+![alt text](image-20.png)     
+
+![alt text](image-21.png)     
+
+#### cb.	Отключите поиск DNS, чтобы предотвратить попытки маршрутизатора неверно преобразовывать введенные команды таким образом, как будто они являются именами узлов.     
+![alt text](image-22.png)     
+
+![alt text](image-23.png)    
+
+#### &nbsp;&nbsp;&nbsp;&nbsp;c.	Назначьте **class** в качестве зашифрованного пароля привилегированного режима EXEC.     
+![alt text](image-25.png)    
+
+![alt text](image-26.png)     
+
+#### &nbsp;&nbsp;&nbsp;&nbsp;d.	Назначьте cisco в качестве пароля консоли и включите вход в систему по паролю.      
+![alt text](image-27.png)     
+
+![alt text](image-28.png)     
+
+#### &nbsp;&nbsp;&nbsp;&nbsp;e.	Назначьте **cisco** в качестве пароля VTY и включите вход в систему по паролю.     
+![alt text](image-29.png)     
+
+![alt text](image-30.png)    
+
+#### &nbsp;&nbsp;&nbsp;&nbsp;f.	Зашифруйте открытые пароли.      
+![alt text](image-31.png)     
+
+![alt text](image-32.png)    
+
+#### &nbsp;&nbsp;&nbsp;&nbsp;g.	Создайте баннер с предупреждением о запрете несанкционированного доступа к устройству.      
+![alt text](image-33.png)     
+
+![alt text](image-34.png)     
+
+#### &nbsp;&nbsp;&nbsp;&nbsp;h.	Сохраните текущую конфигурацию в файл загрузочной конфигурации.     
+![  ](image-35.png)      
+
+![alt text](image-36.png)     
+
+
 
 
 
