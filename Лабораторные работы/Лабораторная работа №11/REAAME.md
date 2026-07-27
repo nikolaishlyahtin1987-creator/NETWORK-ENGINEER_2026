@@ -130,7 +130,155 @@
 
 ![alt text](image-46.png)     
 
+## **Часть 3.Настройте транки (магистральные каналы).      
+### **Шаг 1. Вручную настройте магистральный интерфейс F0/1.**       
+#### &nbsp;&nbsp;&nbsp;&nbsp;a.	Измените режим порта коммутатора на интерфейсе F0/1, чтобы принудительно создать магистральную связь. Не забудьте сделать это на обоих коммутаторах.      
+![alt text](image-47.png)     
 
+![alt text](image-48.png)     
+
+#### &nbsp;&nbsp;&nbsp;&nbsp;b.	В рамках конфигурации транка установите для native vlan значение 1000 на обоих коммутаторах. При настройке двух интерфейсов для разных собственных VLAN сообщения об ошибках могут отображаться временно.       
+![alt text](image-49.png)     
+
+![alt text](image-50.png)      
+
+#### &nbsp;&nbsp;&nbsp;&nbsp;c.	В качестве другой части конфигурации транка укажите, что VLAN 20, 30, 40 и 1000 разрешены в транке.       
+![alt text](image-51.png)     
+
+![alt text](image-52.png)      
+
+#### &nbsp;&nbsp;&nbsp;&nbsp;d.	Выполните команду **show interfaces trunk** для проверки портов магистрали, собственной VLAN и разрешенных VLAN через магистраль.       
+![alt text](image-53.png)     
+
+![alt text](image-54.png)     
+
+### **Шаг 2. Вручную настройте магистральный интерфейс F0/5 на коммутаторе S1.**     
+#### &nbsp;&nbsp;&nbsp;&nbsp;a.	Настройте интерфейс S1 F0/5 с теми же параметрами транка, что и F0/1. Это транк до маршрутизатора.     
+![alt text](image-55.png)     
+
+#### &nbsp;&nbsp;&nbsp;&nbsp;b.	Сохраните текущую конфигурацию в файл загрузочной конфигурации.    
+   ![alt text](image-56.png)     
+
+#### &nbsp;&nbsp;&nbsp;&nbsp;c.	Используйте команду show interfaces trunk для проверки настроек транка.    
+![alt text](image-57.png)     
+
+## **Часть 4. Настройте маршрутизацию.**     
+### **Шаг 1. Настройка маршрутизации между сетями VLAN на R1.**      
+#### &nbsp;&nbsp;&nbsp;&nbsp;a.	Активируйте интерфейс G0/0/1 на маршрутизаторе.      
+![alt text](image-58.png)     
+
+#### &nbsp;&nbsp;&nbsp;&nbsp;b.	Настройте подинтерфейсы для каждой VLAN, как указано в таблице IP-адресации. Все подинтерфейсы используют инкапсуляцию 802.1Q. Убедитесь, что подинтерфейс для собственной VLAN не имеет назначенного IP-адреса. Включите описание для каждого подинтерфейса.     
+
+#### Создаем подинтерфейс для VLAN 20 (Management):      
+![alt text](image-59.png)      
+
+#### Создаем подинтерфейс для VLAN 30 (Operations):     
+![alt text](image-60.png)      
+
+#### Создаем подинтерфейс для VLAN 40 (Sales):    
+![alt text](image-61.png)     
+
+#### Создаем подинтерфейс для native VLAN 1000 (без IP-адреса):       
+![alt text](image-62.png)     
+
+#### &nbsp;&nbsp;&nbsp;&nbsp;c.	Настройте интерфейс Loopback 1 на R1 с адресацией из приведенной выше таблицы.       
+![alt text](image-63.png)     
+
+#### &nbsp;&nbsp;&nbsp;&nbsp;d.	С помощью команды show ip interface brief проверьте конфигурацию подынтерфейса.    
+![alt text](image-64.png)     
+
+### **Шаг 2. Настройка интерфейса R2 g0/0/1 с использованием адреса из таблицы и маршрута по умолчанию с адресом следующего перехода 10.20.0.1**     
+#### Назначаем IP-адрес на интерфейсе G0/0/1 и активируем его:     
+![alt text](image-65.png)     
+
+#### Настроим маршрут по умолчанию в сторону R1:     
+  ![alt text](image-66.png)    
+
+## **Часть 5. Настройте удаленный доступ**      
+### **Шаг 1. Настройте все сетевые устройства для базовой поддержки SSH.**     
+#### &nbsp;&nbsp;&nbsp;&nbsp;a.	Создайте локального пользователя с именем пользователя SSHadmin и зашифрованным паролем $cisco123!        
+![alt text](image-67.png)     
+
+![alt text](image-68.png)    
+
+![  ](image-69.png)     
+
+![alt text](image-70.png)     
+
+#### &nbsp;&nbsp;&nbsp;&nbsp;b.	Используйте ccna-lab.com в качестве доменного имени     
+![alt text](image-71.png)    
+
+![alt text](image-72.png)    
+
+![alt text](image-73.png)     
+
+![alt text](image-74.png)    
+
+#### &nbsp;&nbsp;&nbsp;&nbsp;c.	Генерируйте криптоключи с помощью 1024 битного модуля.     
+![alt text](image-75.png)    
+
+![alt text](image-76.png)    
+
+![alt text](image-77.png)    
+
+![alt text](image-78.png)     
+
+#### &nbsp;&nbsp;&nbsp;&nbsp;d.	Настройте первые пять линий VTY на каждом устройстве, чтобы поддерживать только SSH-соединения и с локальной аутентификацией.     
+![alt text](image-79.png)      
+
+![alt text](image-80.png)     
+
+![alt text](image-81.png)    
+
+![alt text](image-82.png)    
+
+### **Шаг 2. Включите защищенные веб-службы с проверкой подлинности на R1.**    
+#### &nbsp;&nbsp;&nbsp;&nbsp;a.	Включите сервер HTTPS на R1.     
+#### В Cisco Packet Tracer HTTPS недоступен, пропускаем этот шаг.
+![alt text](image-83.png)    
+
+#### &nbsp;&nbsp;&nbsp;&nbsp;b.	Настройте R1 для проверки подлинности пользователей, пытающихся подключиться к веб-серверу.     
+#### Команда ip http authentication local также не поддерживается в Packet Tracer, этот шаг тоже пропускаем.
+![alt text](image-84.png)    
+
+## **Часть 6. Проверка подключения**      
+### **Шаг 1. Настройте узлы ПК.**        
+#### Адреса ПК указаны в таблице адресации.
+![alt text](image-85.png)      
+
+![alt text](image-86.png)     
+
+### **Шаг 2. Выполните следующие тесты. Эхозапрос должен пройти успешно.**     
+![alt text](image-87.png)    
+
+#### PC-A → PC-B (ping 10.40.0.10)
+![alt text](image-88.png)    
+
+#### PC-A → R1 Management (ping 10.20.0.1)      
+![alt text](image-89.png)     
+
+#### PC-B → PC-A (ping 10.30.0.10)       
+![alt text](image-90.png)      
+
+####  PC-B → R1 Management (ping 10.20.0.1)        
+![alt text](image-91.png)     
+
+#### PC-B → Loopback 1 R1 (ping 172.16.1.1)     
+![alt text](image-92.png)     
+
+####  PC-B → R1 Management по HTTPS (https://10.20.0.1)   
+#### В Cisco Packet Tracer HTTPS не поддерживается   
+![alt text](image-93.png)    
+
+####  PC-B → Loopback 1 по HTTPS (https://172.16.1.1)     
+#### В Cisco Packet Tracer HTTPS не поддерживается
+![alt text](image-94.png)    
+
+#### PC-B → R1 Management по SSH (SSH к 10.20.0.4)  
+![alt text](image-95.png)      
+
+####  PC-B → Loopback 1 по SSH (SSH к 172.16.1.1)     
+![alt text](image-96.png)    
 
 
 
