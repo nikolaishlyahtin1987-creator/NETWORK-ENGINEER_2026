@@ -197,32 +197,14 @@
 ## **Часть 5. Настройте удаленный доступ**      
 ### **Шаг 1. Настройте все сетевые устройства для базовой поддержки SSH.**     
 #### &nbsp;&nbsp;&nbsp;&nbsp;a.	Создайте локального пользователя с именем пользователя SSHadmin и зашифрованным паролем $cisco123!        
-![alt text](image-67.png)     
-
-![alt text](image-68.png)    
-
-![  ](image-69.png)     
-
-![alt text](image-70.png)     
-
+![alt text](image-67.png)          
+     
 #### &nbsp;&nbsp;&nbsp;&nbsp;b.	Используйте ccna-lab.com в качестве доменного имени     
 ![alt text](image-71.png)    
-
-![alt text](image-72.png)    
-
-![alt text](image-73.png)     
-
-![alt text](image-74.png)    
-
+   
 #### &nbsp;&nbsp;&nbsp;&nbsp;c.	Генерируйте криптоключи с помощью 1024 битного модуля.     
 ![alt text](image-75.png)    
-
-![alt text](image-76.png)    
-
-![alt text](image-77.png)    
-
-![alt text](image-78.png)     
-
+     
 #### &nbsp;&nbsp;&nbsp;&nbsp;d.	Настройте первые пять линий VTY на каждом устройстве, чтобы поддерживать только SSH-соединения и с локальной аутентификацией.     
 ![alt text](image-79.png)      
 
