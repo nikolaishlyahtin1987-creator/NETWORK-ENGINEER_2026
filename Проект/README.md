@@ -120,6 +120,16 @@ L3-транзит |Edge R2 ↔ Core B2|192.168.7.4/30|—|Edge R2 (Gi0/1), Core 
 #### **Core B2:**     
 ![alt text](image-24.png)     
 
+### **Настройка NAT (PAT)**     
+#### **Edge R1:**      
+![alt text](image-25.png)      
+
+#### **Edge R2:**       
+![alt text](image-26.png)      
+
+### **ISP Router (статические маршруты):**       
+#### ![alt text](image-27.png)      
+
 
 
  
