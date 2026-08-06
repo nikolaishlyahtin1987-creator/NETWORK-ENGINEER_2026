@@ -47,6 +47,51 @@ L3-транзит |Edge R2 ↔ Core B2|192.168.7.4/30|—|Edge R2 (Gi0/1), Core 
 #### **Edge R2 (филиал В)**       
 ![alt text](image-8.png)     
 
+#### **L3-коммутаторы ядра (Core A1, A2, B1, B2)**       
+#### **Core A1** (для остальных меняются IP-адреса согласно таблице). 
+#### **Для Core A2:**
+#### interface gig0/1 с IP 192.168.3.6/30
+#### **Для Core B1:**
+#### interface gig0/1 с IP 192.168.7.2/30
+#### **Для Core B2:**
+#### interface gig0/1 с IP 192.168.7.6/30     
+
+![alt text](image-9.png)      
+
+### **L2-коммутаторы (Distr и Access)**    
+#### **Distr A1**  (для остальных меняется IP-адрес управления).    
+![alt text](image-10.png)     
+
+### **IP-адреса VLAN 100 для всех L2-коммутаторов:**     
+|Устройство|IP-адрес |
+|:---      |---:|  
+|Distr A1 |192.168.2.10/28|
+|Distr A2|192.168.2.11/28|
+|Distr B1|192.168.6.10/28|
+|Distr B2|192.168.6.11/28|
+|Access A1|192.168.2.12/28|
+|Access A2|192.168.2.13/28|
+|Access B1|192.168.6.12/28|
+|Access B2|192.168.6.13/28|      
+
+### **1.3 Настройка VLAN на Access-коммутаторах**      
+#### Выполняется на каждом Access (A1, A2, B1, B2).      
+![alt text](image-11.png)    
+
+### **1.4. Меж-VLAN маршрутизация (SVI) на Core L3**      
+#### **Core A1:**     
+![alt text](image-12.png)     
+
+#### **Core A2:**     
+![alt text](image-13.png)     
+
+#### **Core B1:**     
+![alt text](image-14.png)    
+
+#### **Core B2:**    
+![alt text](image-15.png)     
+
+
 
  
 
