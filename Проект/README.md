@@ -91,6 +91,35 @@ L3-транзит |Edge R2 ↔ Core B2|192.168.7.4/30|—|Edge R2 (Gi0/1), Core 
 #### **Core B2:**    
 ![alt text](image-15.png)     
 
+### **1.5. Настройка DHCP**      
+#### **Core A1 (филиал А):**     
+![alt text](image-16.png)    
+
+#### **Core B1 (филиал В):**     
+![alt text](image-17.png)   
+
+### **1.6. Настройка OSPF**      
+#### **ISP Router:**     
+![alt text](image-18.png)     
+
+#### **Edge R1:**     
+![alt text](image-19.png)     
+
+#### **Edge R2:**     
+![alt text](image-20.png)    
+
+#### **Core A1:**     
+![alt text](image-21.png)     
+
+#### **Core A2:**     
+![alt text](image-22.png)     
+
+#### **Core B1:**      
+![alt text](image-23.png)      
+
+#### **Core B2:**     
+![alt text](image-24.png)     
+
 
 
  
