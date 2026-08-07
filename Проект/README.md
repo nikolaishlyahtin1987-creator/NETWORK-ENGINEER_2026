@@ -200,6 +200,10 @@ L3-транзит |Edge R2 ↔ Core B2|192.168.7.4/30|—|Edge R2 (Gi0/1), Core 
 
 #### Пакеты блокируются.    
 
+[Скачать конфиг проекта](https://github.com/nikolaishlyahtin1987-creator/NETWORK-ENGINEER_2026/blob/main/Проект/ПРОЕКТ.pkt "Нажмите для скачивания файла конфигурации")         
+
+
+
 
 
 
