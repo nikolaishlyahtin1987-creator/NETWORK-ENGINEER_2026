@@ -166,6 +166,37 @@
 ### **Шаг 2. Настройка DHCP на Core B1 (филиал В)      
 ![alt text](image-31.png)    
 
+## **Часть 5. Настройка динамической маршрутизации OSPF**   
+### **Шаг 1. Настраиваем OSPF на ISP Router**     
+![alt text](image-32.png)    
+#### router ospf 1 — запускает процесс OSPF с номером 1     
+#### router-id 0.0.0.1 — уникальный идентификатор маршрутизатора в OSPF-области      
+#### network ... area 0 — анонсирует сети в OSPF-область 0     
+#### Сеть 209.165.200.0/27 включает loopback         
+
+### **Шаг 2. Настройка OSPF на Edge R1 и Edge R2**      
+#### **Edge R1:**     
+![alt text](image-33.png)      
+
+#### **Edge R2:**       
+![alt text](image-34.png)    
+#### default-information originate — эта команда заставляет маршрутизатор распространять в OSPF маршрут по умолчанию (0.0.0.0/0)      
+
+### **Шаг 3. Настройка OSPF на Core A1**      
+![alt text](image-35.png)     
+
+#### Повторяем для Core A2, B1, B2 с уникальными Router ID и соответствующими сетями.    
+
+#### **Core B1:**    
+![alt text](image-36.png)    
+
+#### **Core B2:**      
+![alt text](image-37.png)     
+
+#### **Core A2:**     
+![alt text](image-38.png)     
+
+
 
 
 
