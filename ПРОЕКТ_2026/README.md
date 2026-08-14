@@ -324,6 +324,7 @@
 ![alt text](image-69.png)     
 
 
+[Скачать конфиг проекта](https://github.com/nikolaishlyahtin1987-creator/NETWORK-ENGINEER_2026/blob/main/ПРОЕКТ_2026/ПРОЕКТ_НОВЫЙ%20С%20УРОВНЯМИ.pkt "Нажмите для скачивания файла конфигурации")
 
 
 
